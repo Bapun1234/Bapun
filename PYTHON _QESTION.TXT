@@ -1,0 +1,62 @@
+Ex-2
+
+1) a)Telnet to sever(Python).
+
+import telnetlib
+import getpass
+host= "http://localhost:8000/"
+user = int(input("Enter your remote account: "))
+password = getpass.getpass()
+tn = telnetlib.Telnet(host)
+
+tn.read_until("login: ")
+tn.write(user)
+if password:
+    tn.read_until("Password: ")
+    tn.write(password)
+
+tn.write("ls\n")
+tn.write("exit\n")
+
+print tn.read_all()
+
+Get the list of files from the path.
+e) import os
+    os.getcwd() 
+x = os.listdir()
+
+
+
+
+f)Copy files remote server using(FTP) and (SCP).
+
+#1st we need to import "ftplib"
+then host name will be followed by user and any password .
+
+import ftplib
+FTP_HOST = "www.google.com"
+FTP_USER = "pramod.mohanty100@gmail.com"
+FTP_PASS = "********"
+
+# connect to the FTP server
+ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
+
+#2.
+
+import subprocess
+p = subprocess.Popen(["scp", "myemp.txt", "pramod.mohanty100@gmail.com"])
+sts = os.waitpid(p.pid, 0)
+
+
+
+4)a)Using by "TOP" command to observe.
+
+b)we can use by "HTOP" coomand.
+
+c)Using by "grep processor /proc/cpuinfo | wc -l" to minimize the sever laod.
+
+
+
+5) Actually Query was not provided.
+
+6)Table details also not provided.
