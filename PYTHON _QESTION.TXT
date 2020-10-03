@@ -2,10 +2,10 @@ Ex-2
 
 1) a)Telnet to sever(Python).
 
-import telnetlib
+iimport telnetlib
 import getpass
 host= "http://localhost:8000/"
-user = int(input("Enter your remote account: "))
+user = input("Enter your remote account: ")
 password = getpass.getpass()
 tn = telnetlib.Telnet(host)
 
@@ -18,7 +18,7 @@ if password:
 tn.write("ls\n")
 tn.write("exit\n")
 
-print tn.read_all()
+print(tn.read_all())
 
 Get the list of files from the path.
 e) import os
